@@ -86,6 +86,7 @@ const felvitel=()=>{
     "datum":datum,
     "kesz":0
   })
+  uj.sort((a, b) => new Date(a.datum) - new Date(b.datum));
   setAdatTomb(uj)
   storeData(uj)
   alert("Sikeres felvitel!")
@@ -103,7 +104,7 @@ const torles=()=>{
 const valtozikDatum=(event,datum)=>{
   alert(datum)
   setShow(false)
-  setDatum(datum.getFullYear()+"."+(datum.getMonth()+1)+"."+datum.getDate())
+  setDatum(datum.getFullYear()+"-"+(datum.getMonth()+1)+"-"+datum.getDate())
 }
 
 const befejezVagyVissza=(id)=>{
